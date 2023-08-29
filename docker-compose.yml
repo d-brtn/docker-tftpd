@@ -10,6 +10,15 @@ services:
       TFTPD_BIND_ADDRESS: "0.0.0.0:1069"
       # Search the man page for --blocksize to learn more
       TFTPD_EXTRA_ARGS: '--blocksize 1468'
+
+      # PROXY SETTINGS
+      http_proxy: ${http_proxy}
+      https_proxy: ${https_proxy}
+      HTTP_PROXY: ${http_proxy}
+      HTTPS_PROXY: ${https_proxy}
+
+
+      
     cap_drop:
       - ALL
     cap_add:
