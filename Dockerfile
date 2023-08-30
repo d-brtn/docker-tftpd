@@ -12,6 +12,7 @@ ARG SYSLINUX_PACKAGE="https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/sy
 RUN apk add --no-cache tftp-hpa
 
 # Help setting up the basic pxelinux environment.
+RUN apk add ca-certificates wget && update-ca-certificates    
 RUN mkdir /tmp/syslinux && \
     wget "$SYSLINUX_PACKAGE" -O /tmp/syslinux/syslinux.apk && \
     tar -C /tmp/syslinux -xvf /tmp/syslinux/syslinux.apk && \
